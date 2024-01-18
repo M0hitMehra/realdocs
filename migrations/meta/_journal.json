@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1704531829148,
+      "tag": "0000_flat_ink",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1704537995891,
+      "tag": "0001_same_epoch",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1704544072897,
+      "tag": "0002_flowery_grey_gargoyle",
+      "breakpoints": true
+    }
+  ]
+}
