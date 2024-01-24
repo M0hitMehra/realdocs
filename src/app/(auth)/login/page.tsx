@@ -73,7 +73,7 @@ const LoginPage = () => {
                 />
                 {submitError && <FormMessage >{submitError}</FormMessage>}
                 <Button className='w-full p-6' type='submit' disabled={isLoading} size={'lg'} >{!isLoading ? 'Login' : (<Loader />)}</Button>
-                <span className=' self-center' >Don't have an account?
+                <span className='self-center' >Don&apos;t have an account?
                     <Link href={'/signup'} className=' text-primary' > Sign Up</Link>
                 </span>
             </form>
