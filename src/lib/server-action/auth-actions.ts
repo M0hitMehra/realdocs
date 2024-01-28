@@ -16,5 +16,10 @@ export async function actionSignUpUser({ email, password }: z.infer<typeof FormS
     const { data } = await supabase.from('profiles').select('*').eq('email', email)
 
     if (data?.length) return { error: { message: "User already exists", data } }
-    const response = await supabase.auth.signUp({ email, password })
+    const response = await supabase.auth.signUp({
+        email,
+        password,
+        options: { emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}api/auth/callback` }
+    })
+    return response
 }
