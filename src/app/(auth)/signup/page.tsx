@@ -11,7 +11,7 @@ import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 import React, { useMemo, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import Loader from '@/components/Loader'
+import Loader from '@/components/global/Loader'
 import { z } from 'zod'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { MailCheck } from 'lucide-react'
@@ -82,7 +82,7 @@ const Signup = () => {
                 {!confirmation && !codeExchangeError &&
                     <>
                         <FormField disabled={isLoading} control={form.control} name='email'
-                            render={({field}) =>
+                            render={({ field }) =>
                             (<FormItem>
                                 <FormControl>
                                     <Input type='email' placeholder='Email' {...field} />
@@ -91,7 +91,7 @@ const Signup = () => {
                             </FormItem>)}
                         />
                         <FormField disabled={isLoading} control={form.control} name='password'
-                            render={({field}) =>
+                            render={({ field }) =>
                             (<FormItem>
                                 <FormControl>
                                     <Input type='password' placeholder='Password' {...field} />
@@ -100,7 +100,7 @@ const Signup = () => {
                             </FormItem>)}
                         />
                         <FormField disabled={isLoading} control={form.control} name='confirmPassword'
-                            render={({field}) =>
+                            render={({ field }) =>
                             (<FormItem>
                                 <FormControl>
                                     <Input type='password' placeholder='Confirm Password' {...field} />
