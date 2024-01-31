@@ -7,14 +7,15 @@ import EmojiPicker from '../global/emoji-picker'
 import { Label } from '../ui/label'
 import { Input } from '../ui/input'
 import { useForm } from 'react-hook-form'
+import { Subscription } from '@/lib/supabase/supabase.types'
 
 interface DashboardSetupProps {
     user: AuthUser,
-    subscription: {} | null
+    subscription: Subscription | null
 }
 
 const DashboardSetup: React.FC<DashboardSetupProps> = ({ user, subscription }) => {
-    const [selectedEmoji, setSelectedEmoji] = useState()
+    const [selectedEmoji, setSelectedEmoji] = useState('💼')
     const { register, handleSubmit, reset, formState: { isSubmitting: isLoading, errors } } = useForm({
         mode: "onChange",
         defaultValues: {
@@ -46,6 +47,17 @@ const DashboardSetup: React.FC<DashboardSetupProps> = ({ user, subscription }) =
                                     {errors?.workspaceName?.message?.toString()}
                                 </small>
                             </div>
+                        </div>
+                        <div>
+                            <Label className=' text-sm text-muted-foreground' htmlFor='logo'>
+                                Workspace Logo
+                            </Label>
+                            <Input id={'logo'} placeholder='Workspace Name' type='file' accept='image/*' disabled={isLoading || subscription?.status !== "active"} {...register('logo', {
+                                required: "Workspace name is required"
+                            })} />
+                            <small className=' text-red-600'>
+                                {errors?.logo?.message?.toString()}
+                            </small>
                         </div>
                     </div>
                 </form>
