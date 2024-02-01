@@ -8,6 +8,7 @@ import { Label } from '../ui/label'
 import { Input } from '../ui/input'
 import { useForm } from 'react-hook-form'
 import { Subscription } from '@/lib/supabase/supabase.types'
+import { CreateWorkspaceFormSchema } from '@/lib/types'
 
 interface DashboardSetupProps {
     user: AuthUser,
@@ -16,7 +17,8 @@ interface DashboardSetupProps {
 
 const DashboardSetup: React.FC<DashboardSetupProps> = ({ user, subscription }) => {
     const [selectedEmoji, setSelectedEmoji] = useState('💼')
-    const { register, handleSubmit, reset, formState: { isSubmitting: isLoading, errors } } = useForm({
+    
+    const { register, handleSubmit, reset, formState: { isSubmitting: isLoading, errors } } = useForm<z.infer<typeof CreateWorkspaceFormSchema>>({
         mode: "onChange",
         defaultValues: {
             logo: "",
