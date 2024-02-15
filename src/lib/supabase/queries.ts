@@ -51,8 +51,23 @@ export const getFolders = async (workspaceId: string) => {
     const isValid = validate(workspaceId)
     if (!isValid) return { data: null, error: null }
     try {
-        const results: Folder[] | [] = await db.select().from(folders).orderBy(folders.createdAt).where(eq(folders.workspaceId, workspaceId))   
+        const results: Folder[] | [] = await db.select().from(folders).orderBy(folders.createdAt).where(eq(folders.workspaceId, workspaceId))
+        return { data: results, error: null }
     } catch (error) {
         return { data: null, error: "Error" }
     }
+}
+
+export const getPrivateWorkspaces = async (userId: string) => {
+    if (!userId) return []
+    const privateWorkspaces = await db.select({
+        id: workspaces.id,
+        createdAt: workspaces.createdAt,
+        workspaceOwner: workspaces.workspaceOwner,
+        title: workspaces.title,
+        iconId: workspaces.iconId,
+        data: workspaces.data,
+        inTrash: workspaces.inTrash,
+        logo: workspaces.logo,
+    })
 }

@@ -1,7 +1,7 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import React from 'react'
 import { cookies } from 'next/headers';
-import { getUserSubscriptionStatus } from '@/lib/supabase/queries';
+import { getFolders, getUserSubscriptionStatus } from '@/lib/supabase/queries';
 import { redirect } from 'next/navigation';
 
 interface SidebarProps {
