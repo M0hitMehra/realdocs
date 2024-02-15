@@ -51,7 +51,7 @@ export const getFolders = async (workspaceId: string) => {
     const isValid = validate(workspaceId)
     if (!isValid) return { data: null, error: null }
     try {
-        const results: Folder[] | [] = await db.select().from(folders).orderBy(folders.createdAt).where(eq(folders.workspaceId, workspaceId))
+        const results: Folder[] | [] = await db.select().from(folders).orderBy(folders.createdAt).where(eq(folders.workspaceId, workspaceId))   
     } catch (error) {
         return { data: null, error: "Error" }
     }
