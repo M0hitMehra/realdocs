@@ -32,14 +32,14 @@ type Action =
     type: "SET_WORKSPACES";
     payload: { workspaces: appWorkspacesType[] | [] }
   }
-  | {
-    type: 'SET_FOLDERS';
-    payload: { workspaceId: string; folders: [] | appFoldersType[] };
-  }
-  | {
-    type: 'ADD_FOLDER';
-    payload: { workspaceId: string; folder: appFoldersType };
-  }
+  // | {
+  //   type: 'SET_FOLDERS';
+  //   payload: { workspaceId: string; folders: [] | appFoldersType[] };
+  // }
+  // | {
+  //   type: 'ADD_FOLDER';
+  //   payload: { workspaceId: string; folder: appFoldersType };
+  // }
   | {
     type: 'ADD_FILE';
     payload: { workspaceId: string; file: File; folderId: string };
