@@ -201,7 +201,7 @@ const DashboardSetup: React.FC<DashboardSetupProps> = ({
                   To customize your workspace, you need to be on a Pro Plan
                 </small>
               )}
-            </div>  
+            </div>
             <div className="self-end">
               <Button
                 disabled={isLoading}

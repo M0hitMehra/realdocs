@@ -29,7 +29,7 @@ const WorkspaceDropdown: React.FC<WorkspaceDropdownProps> = ({ privateWorkspaces
                 },
             });
         }
-    }, [privateWorkspaces, collaboratingWorkspaces, sharedWorkspaces, dispatch, state.workspaces.length]);
+    }, [privateWorkspaces, collaboratingWorkspaces, sharedWorkspaces]);
 
 
     return (
