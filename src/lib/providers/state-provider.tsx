@@ -29,8 +29,8 @@ type Action =
     payload: { workspace: Partial<appWorkspacesType>; workspaceId: string };
   }
   | {
-    type: 'SET_WORKSPACES';
-    payload: { workspaces: appWorkspacesType[] | [] };
+    type: "SET_WORKSPACES";
+    payload: { workspaces: appWorkspacesType[] | [] }
   }
   | {
     type: 'SET_FOLDERS';
@@ -109,8 +109,8 @@ const appReducer = (
     case 'SET_WORKSPACES':
       return {
         ...state,
-        workspaces: action.payload.workspaces,
-      };
+        workspaces: action.payload.workspaces
+      }
     case 'SET_FOLDERS':
       return {
         ...state,
